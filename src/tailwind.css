@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+
+@font-face {
+  font-family: "Precious";
+  src: local("Precious"), url("/fonts/Precious.ttf") format("ttf");
+}
+
+@tailwind utilities;

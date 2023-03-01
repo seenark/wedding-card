@@ -4,11 +4,11 @@ type Props = {};
 
 export default component$<Props>(() => {
   return (
-    <div class="flex flex-wrap mb-8 border-gray-50">
-      <div class="flex flex-wrap w-1/2 pr-2">
+    <div class="flex flex-wrap md:flex-row flex-col mb-8 border-gray-50">
+      <div class="flex flex-wrap md:w-1/2 w-full md:pr-1">
         <Slot name="left" />
       </div>
-      <div class="flex flex-wrap w-1/2">
+      <div class="flex flex-wrap md:w-1/2 w-full md:pl-1">
         <Slot name="right" />
       </div>
     </div>

@@ -10,28 +10,34 @@ type Props = {
 
 export default component$<Props>(({ imgTopLeft, imgTopRight, imgBottom }) => {
   return (
-    <>
-      <div class="flex flex-wrap w-1/2 pt-2 pr-1">
+    <div class="grid grid-cols-2">
+      <div class="flex pt-2 pr-1">
         <Image
           src={imgTopLeft.src}
           alt={imgTopLeft.alt}
           aspectRatio="aspect-[3/2]"
+          width={347}
+          height={231}
         />
       </div>
-      <div class="flex flex-wrap w-1/2 pt-2 pl-1">
+      <div class="flex pt-2 pl-1">
         <Image
           src={imgTopRight.src}
           alt={imgTopRight.alt}
           aspectRatio="aspect-[3/2]"
+          width={347}
+          height={231}
         />
       </div>
-      <div class="flex flex-wrap w-full py-2">
+      <div class="col-span-2 flex w-full py-2">
         <Image
           src={imgBottom.src}
           alt={imgBottom.alt}
           aspectRatio="aspect-[3/2]"
+          width={703}
+          height={469}
         />
       </div>
-    </>
+    </div>
   );
 });

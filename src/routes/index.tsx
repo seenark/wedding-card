@@ -25,6 +25,7 @@ import WeddingTheme from "~/components/blocks/WeddingTheme/WeddingTheme";
 import BubbleBackground from "~/components/background/bubble/BubbleBackground";
 import CircleFlowerFrame2 from "~/components/images/CircleFlowerFrame2";
 import CircleFlowerFrame3 from "~/components/images/CircleFlowerFrame3";
+import BlessingCard from "~/components/blocks/BlessingCard";
 
 export default component$(() => {
   const brideName = "Piyawan";
@@ -68,6 +69,7 @@ export default component$(() => {
             ]}
           />
         </div>
+        <BlessingCard q:slot="right" />
       </HalfWithImageBackground>
       <HalfWithImageBackground bgImg="/photos/photo2-2.jpg">
         <CircleFlowerFrame q:slot="right" img={images.img2a2} />
@@ -79,20 +81,15 @@ export default component$(() => {
           <CircleFlowerFrame5 q:slot="right" img={images.img2a2} />
         </Firework2>
       </section>
-      <section class="w-full h-[750px]">
-        <Firework2 fireworkCount={20}>
-          <Gallery1
-            imgTopLeft={images.img1}
-            imgTopRight={images.img2}
-            imgBottom={images.img3}
-            q:slot="left"
-          />
-          <Countdown1
-            q:slot="right"
-            weddingDate={new Date("2023-03-28T00:00")}
-          />
-        </Firework2>
-      </section>
+      <Firework2 fireworkCount={20}>
+        <Gallery1
+          imgTopLeft={images.img1}
+          imgTopRight={images.img2}
+          imgBottom={images.img3}
+          q:slot="left"
+        />
+        <Countdown1 q:slot="right" weddingDate={new Date("2023-03-28T00:00")} />
+      </Firework2>
       {/* <HalfWithImageBackground bgImg="/photos/photo35.jpg"> */}
       {/*   <Countdown1 q:slot="left" weddingDate={new Date("2023-03-28T00:00")} /> */}
       {/*   <CircleFlowerFrame3 q:slot="right" img={images.img2a2} /> */}

@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import type { TImage } from "~/stores/images";
 import Image from "../images/Image";
-import Paper2 from "/public/paper/paper2.webp";
+import Paper2 from "../../../public/paper/paper2.webp";
 
 type Props = {
   heroImg: TImage;

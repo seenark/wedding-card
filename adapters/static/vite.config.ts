@@ -11,6 +11,9 @@ export default extendConfig(baseConfig, () => {
         input: ['@qwik-city-plan'],
       },
     },
+    resolve: {
+      alias: {}
+    },
     plugins: [
       qwikCity({basePathname: "/mywedding-card-pages/"}),
       staticAdapter({

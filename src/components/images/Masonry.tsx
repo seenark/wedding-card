@@ -16,7 +16,7 @@ export default component$<Props>(({ images }) => {
           //   aspectRatio={img.aspectRatio}
           //   marginBottomClass="mb-4"
           // />
-          <img key={i} src={img} class="mb-4" />
+          <img key={i} src={img} alt={img} class="mb-4" />
         );
       })}
     </div>

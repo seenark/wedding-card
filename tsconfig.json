@@ -21,7 +21,8 @@
       "~/*": ["./src/*"],
       "~/config/*": ["./config/*"],
       "~/photos/*": ["./public/photos/*"],
-      "~/public/*": ["./public/*"]
+      "~/frames/*": ["./public/frames/*"],
+      "~/icons/*": ["./public/icons/*"]
     }
   },
   "files": ["./.eslintrc.cjs"],

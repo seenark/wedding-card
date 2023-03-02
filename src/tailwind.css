@@ -4,61 +4,61 @@
 
 @font-face {
   font-family: "Precious";
-  src: local("Precious"), url("/fonts/Precious.ttf") format("truetype");
+  src: local("Precious"), url("../public/fonts/Precious.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Aniyah";
-  src: local("Aniyah"), url("/fonts/Aniyah.woff2") format("truetype");
+  src: local("Aniyah"), url("../public/fonts/Aniyah.woff2") format("truetype");
 }
 
 @font-face {
   font-family: "TT_Lovelies";
-  src: url("/fonts/TT_Lovelies.woff2") format("truetype");
+  src: url("../public/fonts/TT_Lovelies.woff2") format("truetype");
 }
 
 @font-face {
   font-family: "TheSeasons";
-  src: url("/fonts/theseasons-reg.woff2") format("truetype");
+  src: url("../public/fonts/theseasons-reg.woff2") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "TheSeasons";
-  src: url("/fonts/theseasons-it.woff2") format("truetype");
+  src: url("../public/fonts/theseasons-it.woff2") format("truetype");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
   font-family: "TheSeasons";
-  src: url("/fonts/theseasons-bd.woff2") format("truetype");
+  src: url("../public/fonts/theseasons-bd.woff2") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: "TheSeasons";
-  src: url("/fonts/theseasons-bdit.woff2") format("truetype");
+  src: url("../public/fonts/theseasons-bdit.woff2") format("truetype");
   font-weight: 600;
   font-style: italic;
 }
 
 @font-face {
   font-family: "TheSeasons";
-  src: url("/fonts/theseasons-lt.woff2") format("truetype");
+  src: url("../public/fonts/theseasons-lt.woff2") format("truetype");
   font-weight: 200;
   font-style: normal;
 }
 @font-face {
   font-family: "TheSeasons";
-  src: url("/fonts/theseasons-ltit.woff2") format("truetype");
+  src: url("../public/fonts/theseasons-ltit.woff2") format("truetype");
   font-weight: 200;
   font-style: italic;
 }
 
 @font-face {
   font-family: "BetterSaturday";
-  src: url("/fonts/Better_Saturday.woff2") format("truetype");
+  src: url("../public/fonts/Better_Saturday.woff2") format("truetype");
 }

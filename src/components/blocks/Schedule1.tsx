@@ -10,6 +10,11 @@ import Svg3 from "../AnimateBackground/Svg3";
 import Svg4 from "../AnimateBackground/Svg4";
 import Svg5 from "../AnimateBackground/Svg5";
 import ScheduleCard from "./ScheduleCard";
+import BarthIcon from "~/icons/barth-icon.png";
+import BananaTreeIcon from "~/icons/banana-tree-icon.png";
+import DualRingIcon from "~/icons/dual-ring-icon.png";
+import ConchIcon from "~/icons/conch-icon.png";
+import GlassIcon from "~/icons/glass-icon.png";
 
 type Props = {};
 
@@ -43,18 +48,14 @@ export default component$<Props>(() => {
   return (
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-2 mb-4 text-amber-900">
       <div ref={box1} class="">
-        <ScheduleCard
-          iconSrc="/icons/barth-icon.png"
-          text="Buddhist ceremony"
-          time="06:30"
-        >
+        <ScheduleCard iconSrc={BarthIcon} text="Buddhist ceremony" time="06:30">
           <Svg1 q:slot="bg-animate" bgColor={colors.yellow[100]} />
           <Svg5 q:slot="bg-animate2" bgColor={colors.yellow[100]} />
         </ScheduleCard>
       </div>
       <div ref={box2} class="">
         <ScheduleCard
-          iconSrc="/icons/banana-tree-icon.png"
+          iconSrc={BananaTreeIcon}
           text="Groom's processing"
           time="09:09"
         >
@@ -64,7 +65,7 @@ export default component$<Props>(() => {
       </div>
       <div ref={box3}>
         <ScheduleCard
-          iconSrc="/icons/dual-ring-icon.png"
+          iconSrc={DualRingIcon}
           text="Engagement ceremony"
           time="09:25"
         >
@@ -73,18 +74,14 @@ export default component$<Props>(() => {
         </ScheduleCard>
       </div>
       <div ref={box4}>
-        <ScheduleCard
-          iconSrc="/icons/conch-icon.png"
-          text="Water blessing"
-          time="10:10"
-        >
+        <ScheduleCard iconSrc={ConchIcon} text="Water blessing" time="10:10">
           <Svg4 q:slot="bg-animate" bgColor={colors.yellow[100]} />
           <Svg2 q:slot="bg-animate2" bgColor={colors.yellow[100]} />
         </ScheduleCard>
       </div>
       <div ref={box5}>
         <ScheduleCard
-          iconSrc="/icons/glass-icon.png"
+          iconSrc={GlassIcon}
           text="Wedding celebration"
           time="11:00"
         >

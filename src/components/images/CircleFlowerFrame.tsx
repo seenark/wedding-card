@@ -1,6 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import type { TImage } from "~/stores/images";
 import Image from "./Image";
+import FlowerCircle1 from "~/frames/flower-circle.png";
 
 type Props = {
   img: TImage;
@@ -20,7 +21,7 @@ export default component$<Props>(({ img }) => {
       </div>
       {/* <div class="absolute w-[400px] h-[400px] bg-[url(/frames/flower-circle.png)]"></div> */}
       <img
-        src="/frames/flower-circle.png"
+        src={FlowerCircle1}
         class="absolute scale-[1.3] sm:scale-[1.15] md:scale-[1.5] lg:scale-[1.15] -translate-y-5"
         width={400}
         height={400}

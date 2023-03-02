@@ -1,6 +1,6 @@
 import p1 from "~/photos/photo1.JPG";
 import p2 from "~/photos/photo2.JPG";
-import p2a2 from "~/photos/photo2-2.JPG";
+import p2a2 from "~/photos/photo38.JPG";
 import p3 from "~/photos/photo3.JPG";
 import p4 from "~/photos/photo4.jpg";
 import p5 from "~/photos/photo5.jpg";
@@ -177,3 +177,24 @@ export const images = {
   img33,
   img34,
 };
+
+// export const allImagesDynamic = Array(37)
+//   .fill(0)
+//   .map(
+//     (_, i) =>
+//       new URL(`../../public/photos/photo${i + 1}.jpg`, import.meta.url).href
+//   );
+
+const allImagesDynamicGlob: Record<string, { default: string }> =
+  import.meta.glob("../../public/photos/*.jpg", {
+    eager: true,
+  });
+
+export const allImagesDynamic: Record<string, string> = {};
+
+for (const [k, v] of Object.entries(allImagesDynamicGlob)) {
+  const name = k.replace("../../public/photos/", "").replace(".jpg", "");
+  allImagesDynamic[name] = v.default;
+}
+
+console.log("all images", allImagesDynamic);

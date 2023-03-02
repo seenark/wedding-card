@@ -6,7 +6,6 @@ type Props = {
 };
 
 const bubbleClass = generateBubbleClasses(15);
-console.log("bubble class", bubbleClass);
 
 export default component$<Props>(({ bgImgSrc }) => {
   useStylesScoped$(bubbleClass);

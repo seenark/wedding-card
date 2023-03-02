@@ -12,7 +12,7 @@ import HalfWithImageBackground from "~/components/sections/HalfWithImageBackgrou
 import Text1 from "~/components/texts/Text1";
 import Text2 from "~/components/texts/Text2";
 import { configs } from "~/config/settings";
-import { images } from "~/stores/images";
+import { allImagesDynamic } from "~/stores/images";
 // import { Link } from "@builder.io/qwik-city";
 import colors from "tailwindcss/colors";
 import Hero1 from "~/components/hero/Hero1";
@@ -30,16 +30,38 @@ import BlessingCard from "~/components/blocks/BlessingCard";
 export default component$(() => {
   const brideName = "Piyawan";
   const groomName = "Atiwat";
+  const masonaryImageUrl: string[] = [];
+  for (const [, v] of Object.entries(allImagesDynamic)) {
+    masonaryImageUrl.push(v);
+  }
   return (
     <div class="">
       <Hero1
-        heroImg={images.img4}
+        heroImg={{
+          src: allImagesDynamic["photo4"],
+          alt: "hero1",
+          aspectRatio: "aspect-[3/2]",
+        }}
         brideName={brideName}
         groomName={groomName}
       />
-      <BubbleBackground bgImgSrc="/photos/photo21.jpg">
-        <CircleFlowerFrame2 q:slot="left" img={images.img2} />
-        <CircleFlowerFrame3 q:slot="right" img={images.img4} />
+      <BubbleBackground bgImgSrc={allImagesDynamic["photo21"]}>
+        <CircleFlowerFrame2
+          q:slot="left"
+          img={{
+            src: allImagesDynamic["photo2"],
+            alt: "photo2",
+            aspectRatio: "aspect-[1/1]",
+          }}
+        />
+        <CircleFlowerFrame3
+          q:slot="right"
+          img={{
+            src: allImagesDynamic["photo4"],
+            alt: "photo4",
+            aspectRatio: "aspect-[1/1]",
+          }}
+        />
       </BubbleBackground>
       <Half>
         <Text1
@@ -51,14 +73,14 @@ export default component$(() => {
         />
         <Image
           q:slot="right"
-          src={images.img3.src}
+          src={allImagesDynamic["photo3"]}
           alt="p1"
           aspectRatio="aspect-[4/5]"
           width={711}
           height={889}
         />
       </Half>
-      <HalfWithImageBackground bgImg="/photos/photo9.jpg">
+      <HalfWithImageBackground bgImg={allImagesDynamic["photo9"]}>
         <div class="p-8 w-full h-[500px]" q:slot="left">
           <WeddingTheme
             colors={[
@@ -71,21 +93,54 @@ export default component$(() => {
         </div>
         <BlessingCard q:slot="right" />
       </HalfWithImageBackground>
-      <HalfWithImageBackground bgImg="/photos/photo2-2.jpg">
-        <CircleFlowerFrame q:slot="right" img={images.img2a2} />
+      <HalfWithImageBackground bgImg={allImagesDynamic["photo38"]}>
+        <CircleFlowerFrame
+          q:slot="right"
+          img={{
+            src: allImagesDynamic["photo38"],
+            alt: "photo38",
+            aspectRatio: "aspect-[1/1]",
+          }}
+        />
       </HalfWithImageBackground>
       <Schedule1 />
       <section class="w-full">
-        <Firework2 bgImg="/photos/photo35.jpg" fireworkCount={30}>
-          <CircleFlowerFrame4 q:slot="left" img={images.img2a2} />
-          <CircleFlowerFrame5 q:slot="right" img={images.img2a2} />
+        <Firework2 bgImg={allImagesDynamic["photo35"]} fireworkCount={30}>
+          <CircleFlowerFrame4
+            q:slot="left"
+            img={{
+              src: allImagesDynamic["photo38"],
+              alt: "photo38",
+              aspectRatio: "aspect-[1/1]",
+            }}
+          />
+          <CircleFlowerFrame5
+            q:slot="right"
+            img={{
+              src: allImagesDynamic["photo38"],
+              alt: "photo38",
+              aspectRatio: "aspect-[1/1]",
+            }}
+          />
         </Firework2>
       </section>
       <Firework2 fireworkCount={20}>
         <Gallery1
-          imgTopLeft={images.img1}
-          imgTopRight={images.img2}
-          imgBottom={images.img3}
+          imgTopLeft={{
+            src: allImagesDynamic["photo1"],
+            alt: "photo1",
+            aspectRatio: "aspect-[3/2]",
+          }}
+          imgTopRight={{
+            src: allImagesDynamic["photo2"],
+            alt: "photo2",
+            aspectRatio: "aspect-[3/2]",
+          }}
+          imgBottom={{
+            src: allImagesDynamic["photo3"],
+            alt: "photo3",
+            aspectRatio: "aspect-[3/2]",
+          }}
           q:slot="left"
         />
         <Countdown1 q:slot="right" weddingDate={new Date("2023-03-28T00:00")} />
@@ -108,7 +163,7 @@ export default component$(() => {
         />
         <Image
           q:slot="right"
-          src="/photos/photo37.jpg"
+          src={allImagesDynamic["photo37"]}
           alt="p1"
           aspectRatio="aspect-[4/5]"
           width={711}
@@ -117,35 +172,66 @@ export default component$(() => {
       </Half>
       <Half>
         <Gallery2
-          imgTop={images.img26}
-          imgBottomLeft={images.img27}
-          imgBottomRight={images.img28}
+          imgTop={{
+            src: allImagesDynamic["photo26"],
+            alt: "photo26",
+            aspectRatio: "aspect-[3/2]",
+          }}
+          imgBottomLeft={{
+            src: allImagesDynamic["photo27"],
+            alt: "photo27",
+            aspectRatio: "aspect-[3/2]",
+          }}
+          imgBottomRight={{
+            src: allImagesDynamic["photo28"],
+            alt: "photo28",
+            aspectRatio: "aspect-[3/2]",
+          }}
           q:slot="left"
         />
         <Gallery1
-          imgTopLeft={images.img29}
-          imgTopRight={images.img30}
-          imgBottom={images.img31}
+          imgTopLeft={{
+            src: allImagesDynamic["photo29"],
+            alt: "photo29",
+            aspectRatio: "aspect-[3/2]",
+          }}
+          imgTopRight={{
+            src: allImagesDynamic["photo30"],
+            alt: "photo30",
+            aspectRatio: "aspect-[3/2]",
+          }}
+          imgBottom={{
+            src: allImagesDynamic["photo31"],
+            alt: "photo31",
+            aspectRatio: "aspect-[3/2]",
+          }}
           q:slot="right"
         />
       </Half>
-      <HalfWithImageBackground bgImg="/photos/photo18.JPG">
+      <HalfWithImageBackground bgImg={allImagesDynamic["photo18"]}>
         <div q:slot="left">
           <Image
-            src={images.img15.src}
-            alt={images.img15.alt}
+            src={allImagesDynamic["photo15"]}
+            alt="photo15"
             width={624}
             height={780}
             aspectRatio={"aspect-[4/5]"}
           />
         </div>
-        <CircleCenter q:slot="right" img={images.img18} />
+        <CircleCenter
+          q:slot="right"
+          img={{
+            src: allImagesDynamic["photo18"],
+            alt: "photo18",
+            aspectRatio: "aspect-[3/2]",
+          }}
+        />
       </HalfWithImageBackground>
       <Half>
         <div q:slot="left">
           <Image
-            src={images.img33.src}
-            alt={images.img33.alt}
+            src={allImagesDynamic["photo33"]}
+            alt="photo33"
             width={624}
             height={780}
             aspectRatio={"aspect-[4/5]"}
@@ -153,19 +239,15 @@ export default component$(() => {
         </div>
         <div q:slot="right">
           <Image
-            src={images.img34.src}
-            alt={images.img34.alt}
+            src={allImagesDynamic["photo34"]}
+            alt="photo34"
             width={624}
             height={780}
             aspectRatio={"aspect-[4/5]"}
           />
         </div>
       </Half>
-      <Masonry
-        images={Array(20)
-          .fill(0)
-          .map((_, i) => `/photos/photo${i + 1}.jpg`)}
-      />
+      <Masonry images={masonaryImageUrl} />
     </div>
   );
 });

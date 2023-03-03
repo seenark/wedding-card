@@ -1,4 +1,4 @@
-import p1 from "/photos/photo1.jpg";
+import p1 from "~/photos/photo1.jpg";
 import p2 from "/photos/photo2.jpg";
 import p2a2 from "/photos/photo2-2.jpg";
 import p3 from "/photos/photo3.jpg";

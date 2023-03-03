@@ -26,25 +26,25 @@ import BubbleBackground from "~/components/background/bubble/BubbleBackground";
 import CircleFlowerFrame2 from "~/components/images/CircleFlowerFrame2";
 import CircleFlowerFrame3 from "~/components/images/CircleFlowerFrame3";
 import BlessingCard from "~/components/blocks/BlessingCard";
-import p1 from "~/photos/photo1.jpg";
-import p2 from "~/photos/photo2.jpg";
-import p2a2 from "~/photos/photo2-2.jpg";
-import p3 from "~/photos/photo3.jpg";
-import p4 from "~/photos/photo4.jpg";
-import p9 from "~/photos/photo9.jpg";
-import p15 from "~/photos/photo15.jpg";
-import p18 from "~/photos/photo18.jpg";
-import p21 from "~/photos/photo21.jpg";
-import p26 from "~/photos/photo26.jpg";
-import p27 from "~/photos/photo27.jpg";
-import p28 from "~/photos/photo28.jpg";
-import p29 from "~/photos/photo29.jpg";
-import p30 from "~/photos/photo30.jpg";
-import p31 from "~/photos/photo31.jpg";
-import p33 from "~/photos/photo33.jpg";
-import p34 from "~/photos/photo33.jpg";
-import p35 from "~/photos/photo35.jpg";
-import p37 from "~/photos/photo37.jpg";
+import p1 from "../../public/photos/photo1.jpg";
+import p2 from "../../public/photos/photo2.jpg";
+import p2a2 from "../../public/photos/photo2-2.jpg";
+import p3 from "../../public/photos/photo3.jpg";
+import p4 from "../../public/photos/photo4.jpg";
+import p9 from "../../public/photos/photo9.jpg";
+import p15 from "../../public/photos/photo15.jpg";
+import p18 from "../../public/photos/photo18.jpg";
+import p21 from "../../public/photos/photo21.jpg";
+import p26 from "../../public/photos/photo26.jpg";
+import p27 from "../../public/photos/photo27.jpg";
+import p28 from "../../public/photos/photo28.jpg";
+import p29 from "../../public/photos/photo29.jpg";
+import p30 from "../../public/photos/photo30.jpg";
+import p31 from "../../public/photos/photo31.jpg";
+import p33 from "../../public/photos/photo33.jpg";
+import p34 from "../../public/photos/photo33.jpg";
+import p35 from "../../public/photos/photo35.jpg";
+import p37 from "../../public/photos/photo37.jpg";
 
 export default component$(() => {
   const brideName = "Piyawan";
@@ -267,13 +267,3 @@ export default component$(() => {
     </div>
   );
 });
-
-export const head: DocumentHead = {
-  title: configs.homePageTitle,
-  meta: [
-    {
-      name: "description",
-      content: "My Wedding",
-    },
-  ],
-};

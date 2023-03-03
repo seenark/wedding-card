@@ -158,10 +158,6 @@ export default component$(() => {
       {/*   /> */}
       {/*   <Countdown1 q:slot="right" weddingDate={new Date("2023-03-28T00:00")} /> */}
       {/* </Firework2> */}
-      {/* {/* <HalfWithImageBackground bgImg="/photos/photo35.jpg"> */} */}
-      {/* {/*   <Countdown1 q:slot="left" weddingDate={new Date("2023-03-28T00:00")} /> */} */}
-      {/* {/*   <CircleFlowerFrame3 q:slot="right" img={images.img2a2} /> */} */}
-      {/* {/* </HalfWithImageBackground> */} */}
       {/* <section class="my-20"> */}
       {/*   <QRCode mapUrl="https://goo.gl/maps/sZQAGgdUQcjYjnrj6" /> */}
       {/* </section> */}

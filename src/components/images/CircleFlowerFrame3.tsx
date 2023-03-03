@@ -20,7 +20,7 @@ export default component$<Props>(({ img }) => {
       </div>
       {/* <div class="absolute w-[400px] h-[400px] bg-[url(/frames/flower-circle.png)]"></div> */}
       <img
-        src="/frames/circle3.png"
+        src="/frames/circle3resize.png"
         class="absolute scale-[1.1] md:scale-[1.43] lg:scale-[1.1] translate-y-[8px] translate-x-[2px]"
         width={400}
         height={400}

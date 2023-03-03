@@ -27,7 +27,6 @@ export default component$<Props>(
 
     return (
       <div class="relative">
-        {/* <div class={["absolute", `w-[${width}] h-[${height}]`].join(" ")}></div> */}
         <img
           ref={imageRef}
           src={src}
@@ -42,4 +41,3 @@ export default component$<Props>(
     );
   }
 );
-// isImageVisible.value ? "motion-safe:animate-puff-in-center" : "",

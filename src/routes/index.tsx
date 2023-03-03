@@ -45,6 +45,7 @@ import Hero1 from "~/components/hero/Hero1";
 // import p34 from "../../public/photos/photo33.jpg";
 // import p35 from "../../public/photos/photo35.jpg";
 // import p37 from "../../public/photos/photo37.jpg";
+import p4 from "/my-images/photo4.jpg";
 
 export default component$(() => {
   const brideName = "Piyawan";
@@ -53,7 +54,7 @@ export default component$(() => {
     <div class="">
       <Hero1
         heroImg={{
-          src: "/photo4.jpg",
+          src: p4,
           alt: "photo4",
           aspectRatio: "aspect-[3/2]",
         }}

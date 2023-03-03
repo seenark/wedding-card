@@ -22,9 +22,9 @@ import Hero1 from "~/components/hero/Hero1";
 // import CircleFlowerFrame5 from "~/components/images/CircleFlowerFrame5";
 // import QRCode from "~/components/sections/QRCode";
 // import WeddingTheme from "~/components/blocks/WeddingTheme/WeddingTheme";
-// import BubbleBackground from "~/components/background/bubble/BubbleBackground";
-// import CircleFlowerFrame2 from "~/components/images/CircleFlowerFrame2";
-// import CircleFlowerFrame3 from "~/components/images/CircleFlowerFrame3";
+import BubbleBackground from "~/components/background/bubble/BubbleBackground";
+import CircleFlowerFrame2 from "~/components/images/CircleFlowerFrame2";
+import CircleFlowerFrame3 from "~/components/images/CircleFlowerFrame3";
 // import BlessingCard from "~/components/blocks/BlessingCard";
 // import p1 from "../../public/photos/photo1.jpg";
 // import p2 from "../../public/photos/photo2.jpg";
@@ -45,7 +45,6 @@ import Hero1 from "~/components/hero/Hero1";
 // import p34 from "../../public/photos/photo33.jpg";
 // import p35 from "../../public/photos/photo35.jpg";
 // import p37 from "../../public/photos/photo37.jpg";
-import p4 from "/my-images/photo4.jpg";
 
 export default component$(() => {
   const brideName = "Piyawan";
@@ -54,29 +53,29 @@ export default component$(() => {
     <div class="">
       <Hero1
         heroImg={{
-          src: p4,
+          src: "/my-images/photo4.jpg",
           alt: "photo4",
           aspectRatio: "aspect-[3/2]",
         }}
         brideName={brideName}
         groomName={groomName}
       />
-      {/* <BubbleBackground bgImgSrc={p21}> */}
-      {/*   <CircleFlowerFrame2 */}
-      {/*     q:slot="left" */}
-      {/*     img={{ */}
-      {/*       src: p2, */}
-      {/*       alt: "photo2", */}
-      {/*     }} */}
-      {/*   /> */}
-      {/*   <CircleFlowerFrame3 */}
-      {/*     q:slot="right" */}
-      {/*     img={{ */}
-      {/*       src: p4, */}
-      {/*       alt: "photo4", */}
-      {/*     }} */}
-      {/*   /> */}
-      {/* </BubbleBackground> */}
+      <BubbleBackground bgImgSrc="/my-images/photo21.jpg">
+        <CircleFlowerFrame2
+          q:slot="left"
+          img={{
+            src: "/my-images/photo2.jpg",
+            alt: "photo2",
+          }}
+        />
+        <CircleFlowerFrame3
+          q:slot="right"
+          img={{
+            src: "/my-images/photo4.jpg",
+            alt: "photo4",
+          }}
+        />
+      </BubbleBackground>
       {/* <Half> */}
       {/*   <Text1 */}
       {/*     brideName="Piyawan" */}

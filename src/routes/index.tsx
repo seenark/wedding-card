@@ -53,7 +53,7 @@ export default component$(() => {
     <div class="">
       <Hero1
         heroImg={{
-          src: "/photos/photo4.jpg",
+          src: "../../public/photos/photo4.jpg",
           alt: "photo4",
           aspectRatio: "aspect-[3/2]",
         }}

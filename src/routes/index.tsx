@@ -12,7 +12,7 @@ import HalfWithImageBackground from "~/components/sections/HalfWithImageBackgrou
 import Text1 from "~/components/texts/Text1";
 import Text2 from "~/components/texts/Text2";
 import { configs } from "~/config/settings";
-import { images } from "~/stores/images";
+// import { images } from "~/stores/images";
 // import { Link } from "@builder.io/qwik-city";
 import colors from "tailwindcss/colors";
 import Hero1 from "~/components/hero/Hero1";
@@ -61,8 +61,20 @@ export default component$(() => {
         groomName={groomName}
       />
       <BubbleBackground bgImgSrc={p21}>
-        <CircleFlowerFrame2 q:slot="left" img={images.img2} />
-        <CircleFlowerFrame3 q:slot="right" img={images.img4} />
+        <CircleFlowerFrame2
+          q:slot="left"
+          img={{
+            src: p2,
+            alt: "photo2",
+          }}
+        />
+        <CircleFlowerFrame3
+          q:slot="right"
+          img={{
+            src: p4,
+            alt: "photo4",
+          }}
+        />
       </BubbleBackground>
       <Half>
         <Text1
@@ -213,7 +225,7 @@ export default component$(() => {
         <div q:slot="left">
           <Image
             src={p15}
-            alt={images.img15.alt}
+            alt="photo15"
             width={624}
             height={780}
             aspectRatio={"aspect-[4/5]"}

@@ -23,7 +23,7 @@ import p33 from "/photos/photo33.jpg";
 import p34 from "/photos/photo34.jpg";
 
 export type TImage = {
-  src: string | any;
+  src: string;
   alt: string;
   aspectRatio?: TImageAspectRatio;
 };
@@ -33,6 +33,22 @@ export type TImageAspectRatio =
   | "aspect-[4/5]"
   | "aspect-[2/3]"
   | "aspect-[1/1]";
+
+export type TImagePresetData = {
+  type: string;
+  srcset: string;
+  loading?: "eager" | "lazy";
+  class?: string;
+  src: string;
+  media?: string;
+  sizes?: string;
+};
+
+// export function isTImagePresetData(
+//   src: string | TImagePresetData | any
+// ): src is TImagePresetData {
+//   return (src as TImagePresetData)[0].srcset !== undefined;
+// }
 
 const img1: TImage = {
   src: p1,

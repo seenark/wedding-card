@@ -20,7 +20,7 @@
     "paths": {
       "~/*": ["./src/*"],
       "~/config/*": ["./config/*"],
-      "~/photos/*": ["./public/photos/*"]
+      "~/imgs": ["./my-images/*"]
     }
   },
   "files": ["./.eslintrc.cjs"],

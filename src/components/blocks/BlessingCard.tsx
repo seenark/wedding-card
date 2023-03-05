@@ -16,6 +16,7 @@ export default component$<Props>(() => {
             <span class="label-text">ส่งข้อความถึงบ่าวสาว</span>
           </label>
           <textarea
+            data-theme="light"
             placeholder="เขียนคำอวยพรตรงนี้ 🥰"
             class="w-full textarea textarea-md textarea-bordered"
           ></textarea>
@@ -28,6 +29,7 @@ export default component$<Props>(() => {
             <span class="label-text">ลงชื่อ</span>
           </label>
           <input
+            data-theme="light"
             type="text"
             placeholder="ชื่อของคุณ"
             class="input input-bordered w-full"

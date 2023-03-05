@@ -11,6 +11,12 @@ import Svg4 from "../AnimateBackground/Svg4";
 import Svg5 from "../AnimateBackground/Svg5";
 import ScheduleCard from "./ScheduleCard";
 
+import barthIcon from "~/myAssets/icons/barth-icon.png?preset=icon";
+import bananaTreeIcon from "~/myAssets/icons/banana-tree-icon.png?preset=icon";
+import dualRingIcon from "~/myAssets/icons/dual-ring-icon.png?preset=icon";
+import conchIcon from "~/myAssets/icons/conch-icon.png?preset=icon";
+import glassIcon from "~/myAssets/icons/glass-icon.png?preset=icon";
+
 type Props = {};
 
 export default component$<Props>(() => {
@@ -44,7 +50,7 @@ export default component$<Props>(() => {
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-2 mb-4 text-amber-900">
       <div ref={box1} class="">
         <ScheduleCard
-          iconSrc="/icons/barth-icon.png"
+          iconSrc={barthIcon[barthIcon.length - 1]}
           text="Buddhist ceremony"
           time="06:30"
         >
@@ -54,7 +60,7 @@ export default component$<Props>(() => {
       </div>
       <div ref={box2} class="">
         <ScheduleCard
-          iconSrc="/icons/banana-tree-icon.png"
+          iconSrc={bananaTreeIcon[bananaTreeIcon.length - 1]}
           text="Groom's processing"
           time="09:09"
         >
@@ -64,7 +70,7 @@ export default component$<Props>(() => {
       </div>
       <div ref={box3}>
         <ScheduleCard
-          iconSrc="/icons/dual-ring-icon.png"
+          iconSrc={dualRingIcon[dualRingIcon.length - 1]}
           text="Engagement ceremony"
           time="09:25"
         >
@@ -74,7 +80,7 @@ export default component$<Props>(() => {
       </div>
       <div ref={box4}>
         <ScheduleCard
-          iconSrc="/icons/conch-icon.png"
+          iconSrc={conchIcon[conchIcon.length - 1]}
           text="Water blessing"
           time="10:10"
         >
@@ -84,7 +90,7 @@ export default component$<Props>(() => {
       </div>
       <div ref={box5}>
         <ScheduleCard
-          iconSrc="/icons/glass-icon.png"
+          iconSrc={glassIcon[glassIcon.length - 1]}
           text="Wedding celebration"
           time="11:00"
         >

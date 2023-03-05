@@ -1,12 +1,12 @@
 import { component$, Slot, useStylesScoped$ } from "@builder.io/qwik";
+import { TImagePresetData } from "~/stores/images";
 import { generateBubbleClasses } from "./bubble.helper";
 
 type Props = {
-  bgImgSrc?: string;
+  bgImgSrc?: TImagePresetData;
 };
 
 const bubbleClass = generateBubbleClasses(15);
-console.log("bubble class", bubbleClass);
 
 export default component$<Props>(({ bgImgSrc }) => {
   useStylesScoped$(bubbleClass);
@@ -16,7 +16,12 @@ export default component$<Props>(({ bgImgSrc }) => {
       <div class="absolute w-full h-full col-span-2">
         <>
           {bgImgSrc && (
-            <img src={bgImgSrc} class="w-full h-full object-cover py-4 z-0" />
+            <img
+              src={bgImgSrc.src}
+              srcSet={bgImgSrc.srcset}
+              sizes={bgImgSrc.sizes}
+              class="w-full h-full object-cover py-4 z-0"
+            />
           )}
           {Array(15)
             .fill(0)

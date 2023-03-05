@@ -1,38 +1,35 @@
 import { component$ } from "@builder.io/qwik";
-import type { TImage } from "~/stores/images";
-import Image from "~/components/images/Image";
+import type { TImagePresetData } from "~/stores/images";
+import Picture from "../images/Picture";
 
 type Props = {
-  imgTop: TImage;
-  imgBottomRight: TImage;
-  imgBottomLeft: TImage;
+  imgTop: TImagePresetData[];
+  imgBottomRight: TImagePresetData[];
+  imgBottomLeft: TImagePresetData[];
 };
 export default component$<Props>(
   ({ imgTop, imgBottomLeft, imgBottomRight }) => {
     return (
       <div class="grid grid-cols-2">
         <div class="col-span-2 flex w-full py-2">
-          <Image
-            src={imgTop.src}
-            alt={imgTop.alt}
+          <Picture
+            src={imgTop}
             aspectRatio="aspect-[3/2]"
             width={703}
             height={469}
           />
         </div>
         <div class="flex pr-1">
-          <Image
-            src={imgBottomLeft.src}
-            alt={imgBottomLeft.alt}
+          <Picture
+            src={imgBottomLeft}
             aspectRatio="aspect-[3/2]"
             width={347}
             height={231}
           />
         </div>
         <div class="flex pl-1">
-          <Image
-            src={imgBottomRight.src}
-            alt={imgBottomRight.alt}
+          <Picture
+            src={imgBottomRight}
             aspectRatio="aspect-[3/2]"
             width={347}
             height={231}

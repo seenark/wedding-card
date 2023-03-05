@@ -1,7 +1,8 @@
 import { component$, Slot } from "@builder.io/qwik";
+import { TImagePresetData } from "~/stores/images";
 
 type Props = {
-  iconSrc: string;
+  iconSrc: TImagePresetData;
   text: string;
   time: string;
 };
@@ -17,7 +18,11 @@ export default component$<Props>(({ iconSrc, text, time }) => {
           <Slot name="bg-animate2" />
         </div>
         <img
-          src={iconSrc}
+          src={iconSrc.src}
+          srcSet={iconSrc.srcset}
+          sizes={iconSrc.sizes}
+          loading={iconSrc.loading}
+          alt={iconSrc.src}
           width="100"
           height="100"
           class="animate-wobble-hor-bottom relative z-20"

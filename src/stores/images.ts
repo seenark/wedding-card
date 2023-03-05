@@ -1,27 +1,4 @@
-import p1 from "~/photos/photo1.jpg";
-import p2 from "/photos/photo2.jpg";
-import p2a2 from "/photos/photo2-2.jpg";
-import p3 from "/photos/photo3.jpg";
-import p4 from "/photos/photo4.jpg";
-import p5 from "~/photos/photo5.jpg";
-import p6 from "~/photos/photo6.jpg";
-import p7 from "~/photos/photo7.jpg";
-import p8 from "~/photos/photo8.jpg";
-import p9 from "~/photos/photo9.jpg";
-import p10 from "~/photos/photo10.jpg";
-import p15 from "/photos/photo15.jpg";
-import p18 from "/photos/photo18.jpg";
-import p20 from "~/photos/photo20.jpg";
-import p21 from "~/photos/photo21.jpg";
-import p26 from "/photos/photo26.jpg";
-import p27 from "/photos/photo27.jpg";
-import p28 from "/photos/photo28.jpg";
-import p29 from "/photos/photo29.jpg";
-import p30 from "/photos/photo30.jpg";
-import p31 from "/photos/photo31.jpg";
-import p33 from "/photos/photo33.jpg";
-import p34 from "/photos/photo34.jpg";
-
+import { widthPreset } from "vite-plugin-image-presets";
 export type TImage = {
   src: string;
   alt: string;
@@ -37,7 +14,7 @@ export type TImageAspectRatio =
 export type TImagePresetData = {
   type: string;
   srcset: string;
-  loading?: "eager" | "lazy";
+  loading?: HTMLImageElement["loading"];
   class?: string;
   src: string;
   media?: string;
@@ -50,146 +27,57 @@ export type TImagePresetData = {
 //   return (src as TImagePresetData)[0].srcset !== undefined;
 // }
 
-const img1: TImage = {
-  src: p1,
-  alt: "p1",
-  aspectRatio: "aspect-[2/3]",
-};
-const img2: TImage = {
-  src: p2,
-  alt: "p2",
-  aspectRatio: "aspect-[2/3]",
-};
-const img2a2: TImage = {
-  src: p2a2,
-  alt: "p2-2",
-  aspectRatio: "aspect-[2/3]",
+type TWidthPresetParameter = Parameters<typeof widthPreset>[0];
+type TPresetSizes = {
+  minWidthPerViewport375?: [375, number]; // example 33vw or 50vw
+  minWidthPerViewport640?: [640, number];
+  minWidthPerViewPort768?: [768, number];
+  minWidthPerViewport1024?: [1024, number];
+  minWidthPerViewport1280?: [1280, number];
+  default: [undefined, number]; // example 100vw
 };
 
-const img3: TImage = {
-  src: p3,
-  alt: "p3",
-  aspectRatio: "aspect-[2/3]",
+function getMinWidthMedia(minWidth: number, size: number): string {
+  return `(min-width: ${minWidth}px) ${size}vw`;
+}
+
+function generatePresetSizesString(sizes: TPresetSizes): string {
+  const str: string[] = [];
+  for (const [key, value] of Object.entries(sizes)) {
+    if (key != "default") {
+      str.push(getMinWidthMedia(value[0]!, value[1]));
+    } else {
+      str.push("100vw");
+    }
+  }
+  return str.join(", ");
+}
+
+export type TPresetOptions = {
+  class: TWidthPresetParameter["class"];
+  widths: TWidthPresetParameter["widths"];
+  sizes: TPresetSizes;
+  formats: TWidthPresetParameter["formats"];
+  loading?: HTMLImageElement["loading"];
+  height?: number;
 };
 
-const img4: TImage = {
-  src: p4,
-  alt: "p4",
-  aspectRatio: "aspect-[3/2]",
-};
-const img5: TImage = {
-  src: p5,
-  alt: "p5",
-  aspectRatio: "aspect-[3/2]",
-};
-const img6: TImage = {
-  src: p6,
-  alt: "p6",
-  aspectRatio: "aspect-[2/3]",
-};
-const img7: TImage = {
-  src: p7,
-  alt: "p7",
-  aspectRatio: "aspect-[3/2]",
-};
-const img8: TImage = {
-  src: p8,
-  alt: "p8",
-  aspectRatio: "aspect-[3/2]",
-};
-const img9: TImage = {
-  src: p9,
-  alt: "p9",
-  aspectRatio: "aspect-[3/2]",
-};
-const img10: TImage = {
-  src: p10,
-  alt: "p10",
-  aspectRatio: "aspect-[3/2]",
-};
-const img15: TImage = {
-  src: p15,
-  alt: "p15",
-  aspectRatio: "aspect-[2/3]",
-};
-const img18: TImage = {
-  src: p18,
-  alt: "p18",
-  aspectRatio: "aspect-[3/2]",
-};
-const img20: TImage = {
-  src: p20,
-  alt: "p20",
-  aspectRatio: "aspect-[3/2]",
-};
-const img21: TImage = {
-  src: p21,
-  alt: "p21",
-  aspectRatio: "aspect-[3/2]",
-};
-const img26: TImage = {
-  src: p26,
-  alt: "p26",
-  aspectRatio: "aspect-[3/2]",
-};
-const img27: TImage = {
-  src: p27,
-  alt: "p27",
-  aspectRatio: "aspect-[3/2]",
-};
-const img28: TImage = {
-  src: p28,
-  alt: "p28",
-  aspectRatio: "aspect-[2/3]",
-};
-const img29: TImage = {
-  src: p29,
-  alt: "p29",
-  aspectRatio: "aspect-[3/2]",
-};
-const img30: TImage = {
-  src: p30,
-  alt: "p30",
-  aspectRatio: "aspect-[3/2]",
-};
-const img31: TImage = {
-  src: p31,
-  alt: "p31",
-  aspectRatio: "aspect-[3/2]",
-};
-const img33: TImage = {
-  src: p33,
-  alt: "p33",
-  aspectRatio: "aspect-[3/2]",
-};
-const img34: TImage = {
-  src: p34,
-  alt: "p34",
-  aspectRatio: "aspect-[3/2]",
-};
+export function genWidthPreset(presetOptions: TPresetOptions) {
+  const sizes = generatePresetSizesString(presetOptions.sizes);
+  return widthPreset({
+    class: presetOptions.class,
+    loading: presetOptions.loading || "lazy",
+    widths: presetOptions.widths,
+    sizes: sizes,
+    // sizes: "(min-width: 768px) 50vw, 100vw",
+    media: sizes,
+    formats: presetOptions.formats,
+    height: presetOptions.height,
+  });
+}
 
-export const images = {
-  img1,
-  img2,
-  img2a2,
-  img3,
-  img4,
-  img5,
-  img6,
-  img7,
-  img8,
-  img9,
-  img10,
-  img18,
-  img15,
-  img20,
-  img21,
-  img26,
-  img27,
-  img28,
-  img29,
-  img30,
-  img31,
-  img33,
-  img34,
-};
+export function getLastImagePreset(
+  preset: TImagePresetData[]
+): TImagePresetData {
+  return preset[preset.length - 1];
+}

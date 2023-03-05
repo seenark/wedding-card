@@ -1,4 +1,6 @@
 import { component$, Slot, useStylesScoped$ } from "@builder.io/qwik";
+import Picture from "~/components/images/Picture";
+import type { TImagePresetData } from "~/stores/images";
 import { createFireWorkCssClass } from "./firework.helper";
 
 type Enumerate<
@@ -14,7 +16,7 @@ type IntRange<F extends number, T extends number> = Exclude<
 >;
 
 type Props = {
-  bgImg?: string;
+  bgImg?: TImagePresetData[];
   fireworkCount?: IntRange<20, 50>;
 };
 const fireworkStyle = createFireWorkCssClass(50);
@@ -26,7 +28,13 @@ export default component$<Props>(({ bgImg, fireworkCount }) => {
       <div class="absolute w-full h-full col-span-2">
         <>
           {bgImg && (
-            <img src={bgImg} class="w-full h-full object-cover py-4 z-0" />
+            <div class="w-full h-full overflow-hidden">
+              <Picture
+                src={bgImg}
+                className="py-4 z-0 w-full h-full"
+                classForImgTag="w-full h-full"
+              />
+            </div>
           )}
           {Array(fireworkCount || 50)
             .fill(0)

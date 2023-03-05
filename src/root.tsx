@@ -8,7 +8,6 @@ import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.css";
 import globalStyle from "./tailwind.css?inline";
-// import "./tailwind.css?inline";
 
 export default component$(() => {
   /**

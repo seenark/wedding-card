@@ -3,9 +3,9 @@ import {
   useSignal,
   useBrowserVisibleTask$,
 } from "@builder.io/qwik";
-import type { TImageAspectRatio } from "~/stores/images";
+import type { TImageAspectRatio, TImagePresetData } from "~/stores/images";
 type Props = {
-  src: string | any;
+  srcData: TImagePresetData;
   alt: string;
   aspectRatio?: TImageAspectRatio;
   marginBottomClass?: string;
@@ -13,9 +13,8 @@ type Props = {
   height?: number;
 };
 export default component$<Props>(
-  ({ src, alt, aspectRatio, marginBottomClass, width, height }) => {
+  ({ srcData, alt, aspectRatio, marginBottomClass, width, height }) => {
     const imageRef = useSignal<Element>();
-    // const box1 = useSignal<Element>();
 
     useBrowserVisibleTask$(
       () => {
@@ -29,7 +28,10 @@ export default component$<Props>(
       <div class="relative">
         <img
           ref={imageRef}
-          src={src}
+          src={srcData.src}
+          srcSet={srcData.srcset}
+          sizes={srcData.sizes}
+          loading={srcData.loading}
           alt={alt}
           class={["rounded object-cover", aspectRatio, marginBottomClass].join(
             " "

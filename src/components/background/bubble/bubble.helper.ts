@@ -58,10 +58,25 @@ function genBubbleClass(n: number) {
   return `
   .bubble${n} {
     position: absolute;
-    zoom: ${randomMinMax(30, 100) / 100};
+    zoom: ${randomMinMax(10, 30) / 100};
     left: ${randomMinMax(-20, 120)}%;
     top: ${randomMinMax(-20, 120)}%;
     animation-delay: ${randomMinMax(-8, 8)}s;
+  }
+  @media(min-width: 640px) {
+    .bubble${n} {
+      zoom: ${randomMinMax(20, 40) / 100};
+    }
+  }
+  @media(min-width: 768px) {
+    .bubble${n} {
+      zoom: ${randomMinMax(30, 50) / 100};
+    }
+  }
+  @media(min-width: 1024px) {
+    .bubble${n} {
+      zoom: ${randomMinMax(30, 100) / 100};
+    }
   }
 `;
 }

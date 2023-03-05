@@ -11,7 +11,7 @@ export default component$<Props>(({ bgImg }) => {
     <>
       <div class="relative flex flex-col md:flex-row flex-wrap my-8 border-gray-50 overflow-hidden">
         <div class="absolute w-full h-full z-0">
-          <Picture src={bgImg} className="w-full h-full object-cover" />
+          <Picture src={bgImg} className="w-full h-full object-cover" classForImgTag="h-full" />
         </div>
         <div class="absolute w-full h-full z-10 bg-white/90"></div>
         <div class="flex flex-wrap w-full md:w-1/2 pr-2 z-10">

@@ -51,6 +51,7 @@
     "colortranslator": "^1.10.2",
     "daisyui": "^2.51.0",
     "date-fns": "^2.29.3",
-    "qrcode": "^1.5.1"
+    "qrcode": "^1.5.1",
+    "tailwindcss-3d": "^0.0.9"
   }
 }

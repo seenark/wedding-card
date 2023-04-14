@@ -1,4 +1,32 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require("tailwindcss/plugin");
+
+const backfaceVisibility = plugin(function ({ addUtilities }) {
+  addUtilities({
+    ".backface-visible": {
+      "backface-visibility": "visible",
+      "-moz-backface-visibility": "visible",
+      "-webkit-backface-visibility": "visible",
+      "-ms-backface-visibility": "visible",
+    },
+    ".backface-hidden": {
+      "backface-visibility": "hidden",
+      "-moz-backface-visibility": "hidden",
+      "-webkit-backface-visibility": "hidden",
+      "-ms-backface-visibility": "hidden",
+    },
+  });
+});
+
+const rotateDegs = {
+  ...Object.assign(
+    {},
+    Array(361)
+      .fill(0)
+      .map((_, i) => `${i}deg`)
+  ),
+};
+
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
@@ -12,6 +40,20 @@ module.exports = {
         ttlovelies: ["TT_Lovelies", "sans-serif"],
         theseasons: ["TheSeasons", "sans-serif"],
         better_saturday: ["BetterSaturday", "sans-serif"],
+      },
+      rotate: {
+        ...rotateDegs,
+      },
+      height: {
+        430: "430px",
+        615: "615px",
+        760: "760px",
+        780: "780px",
+        860: "860px",
+        1520: "1520px",
+        3000: "3000px",
+        4000: "4000px",
+        5000: "5000px",
       },
       keyframes: {
         "tilt-in-bottom-2": {
@@ -181,5 +223,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"), require("tailwindcss-3d"), backfaceVisibility],
 };

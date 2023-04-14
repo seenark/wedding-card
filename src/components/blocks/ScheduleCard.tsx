@@ -14,7 +14,7 @@ export default component$<Props>(({ iconSrc, text, time }) => {
         <div class="absolute w-[100px] h-[100px] md:w-[180px] md:h-[180px] animate-rotate-center z-20">
           <Slot name="bg-animate" />
         </div>
-        <div class="absolute w-[100px] h-[100px] md:w-[180px] md:h-[180px] animate-rotate-center-fast scale-[2.0] z-10">
+        <div class="absolute w-[100px] h-[100px] md:w-[180px] md:h-[180px] animate-rotate-center-fast z-10">
           <Slot name="bg-animate2" />
         </div>
         <img

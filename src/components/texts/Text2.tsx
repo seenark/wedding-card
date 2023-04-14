@@ -5,14 +5,26 @@ type Props = {
   brideName: string;
   groomName: string;
   textColor: string;
+  backgroundColor?: string;
 };
 
 export default component$<Props>(
-  ({ headerText, subHeaderText, brideName, groomName, textColor }) => {
+  ({
+    headerText,
+    subHeaderText,
+    brideName,
+    groomName,
+    textColor,
+    backgroundColor,
+  }) => {
     return (
       <div
-        style={{ color: textColor, borderColor: textColor }}
-        class="w-full h-full flex flex-col justify-center items-center py-20 lg:py-0 mx-2 sm:mx-28 md:mx-0 lg:mx-8 my-8 md:my-0 border-2 rounded-xl"
+        style={{
+          color: textColor,
+          borderColor: textColor,
+          backgroundColor,
+        }}
+        class="w-full h-full flex flex-col justify-center items-center py-20 lg:py-0 mx-2 sm:mx-28 md:mx-0 lg:mx-0 my-8 md:my-0 border-2 rounded-xl"
       >
         <div class="font-theseasons text-center">
           <h4 class="uppercase">{headerText}</h4>

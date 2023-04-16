@@ -30,6 +30,7 @@ export default component$<Props>(
   }) => {
     const displayColor = color || colors.yellow[900];
     const displayAddress1Color = address1Color || colors.yellow[900];
+    console.log(displayAddress1Color);
     const displayAddress2Color = address2Color || colors.yellow[900];
 
     useStylesScoped$(`

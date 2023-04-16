@@ -11,7 +11,7 @@ type Props = {
 } & QwikIntrinsicElements["img"];
 
 export default component$<Props>(({ imagePreset, ...props }) => {
-  const lastSource = imagePreset.last();
+  const lastSource = imagePreset[imagePreset.length - 1];
   const imageRef = useSignal<Element>();
   return (
     <img

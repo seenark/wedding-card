@@ -23,6 +23,8 @@ export default component$<Props>(() => {
     console.log("from", from.value);
     await sendMsgToLine(msg.value, from.value, "PanPot");
     showToast();
+    msg.value = "";
+    from.value = "";
   });
 
   return (

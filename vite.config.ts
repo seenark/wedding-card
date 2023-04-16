@@ -9,6 +9,9 @@ import { genWidthPreset } from "./src/stores/images"
 
 export default defineConfig(() => {
   return {
+    server: {
+      host: true
+    },
     resolve: {
       alias: {
         "~/imgs": resolve(__dirname, "./my-images"),

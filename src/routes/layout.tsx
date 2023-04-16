@@ -15,7 +15,7 @@ export default component$(() => {
     <>
       <main>
         <section>
-          <div class="relative bg-white p-4 max-w-[1280px] mx-auto overflow-hidden">
+          <div class="relative bg-white max-w-[1280px] mx-auto overflow-hidden">
             {/* <div class="bg-[url('/paper-bg.jpeg')] fixed bg-cover bg-no-repeat w-[98vw] h-[100vh] "></div> */}
             {/* <div class="bg-[url('/paper-bg.jpeg')] backdrop-blur-sm backdrop-brightness-95 w-[98vw]"> */}
             <div>

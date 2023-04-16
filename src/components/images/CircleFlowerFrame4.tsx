@@ -21,7 +21,7 @@ export default component$<Props>(({ img }) => {
       </div>
       <Picture
         src={circle4}
-        className="absolute scale-[1.3] sm:scale-[1.13] md:scale-[1.5] lg:scale-[1.13] translate-y-[2.6rem]"
+        className="absolute scale-[1.2] sm:scale-[1.13] md:scale-[1.5] lg:scale-[1.13] translate-y-[2.6rem]"
         width={400}
         height={400}
       />

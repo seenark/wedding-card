@@ -1,7 +1,8 @@
 import { Axios } from "axios";
 
-// const url = "https://line-noti.onrender.com";
-const url = "http://localhost:3000";
+const url = "https://axum-line-noti-mizlrlh7oq-as.a.run.app";
+// const url = "http://localhost:3000";
+
 const lineServer = new Axios({
   baseURL: `${url}`,
   headers: {

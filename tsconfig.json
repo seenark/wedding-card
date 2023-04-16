@@ -25,5 +25,5 @@
     }
   },
   "files": ["./.eslintrc.cjs"],
-  "include": ["src", "config", "./Image.d.ts"]
+  "include": ["src", "config", "./Image.d.ts", "./src/Array.ts"]
 }

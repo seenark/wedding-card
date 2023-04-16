@@ -13,6 +13,9 @@ module.exports = {
         theseasons: ["TheSeasons", "sans-serif"],
         better_saturday: ["BetterSaturday", "sans-serif"],
       },
+      backgroundSize: {
+        "200%": "200%",
+      },
       keyframes: {
         "tilt-in-bottom-2": {
           "0%": {
@@ -36,9 +39,31 @@ module.exports = {
             opacity: 1,
           },
         },
+        "puff-out-center": {
+          "0%": {
+            transform: "scale(1)",
+            filter: "blur(0px)",
+            opacity: 1,
+          },
+          "100%": {
+            transform: "scale(2)",
+            filter: "blur(4px)",
+            opacity: 0,
+          },
+        },
         "slide-in-top": {
           "0%": {
             transform: "translateY(-1000px)",
+            opacity: 0,
+          },
+          "100%": {
+            transform: "translateY(0)",
+            opacity: 1,
+          },
+        },
+        "slide-in-top-short": {
+          "0%": {
+            transform: "translateY(-200%)",
             opacity: 0,
           },
           "100%": {
@@ -147,14 +172,36 @@ module.exports = {
             opacity: 1,
           },
         },
+        "scale-in-ver-center": {
+          "0%": {
+            transform: "scaleY(0)",
+            opacity: 1,
+          },
+          "100%": {
+            transform: "scaleY(1)",
+            opacity: 1,
+          },
+        },
+        "bg-gradient": {
+          "0%,100%": {
+            "background-position": "0% 50%",
+          },
+          "50%": {
+            "background-position": "100% 50%",
+          },
+        },
       },
       animation: {
         "tilt-in-bottom":
           "tilt-in-bottom-2 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both",
         "puff-in-center":
           "puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both",
+        "puff-out-center":
+          "puff-out-center 3s cubic-bezier(0.165, 0.840, 0.440, 1.000) infinite both",
         "slide-in-top":
           "slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both",
+        "slide-in-top-short":
+          "slide-in-top-short 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both",
         "slide-in-blurred-left-fast-1":
           "slide-in-blurred-left 0.6s 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both",
         "slide-in-blurred-left-fast-2":
@@ -171,6 +218,9 @@ module.exports = {
         "rotate-center": "rotate-center 5.0s infinite ease-in-out both",
         "rotate-center-fast": "rotate-center 2.0s infinite ease-in-out both",
         "bounce-top": "bounce-top 0.9s both",
+        "scale-in-ver-center":
+          "scale-in-ver-center 1s 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both",
+        "bg-gradient": "bg-gradient 3s ease infinite", // if you want to use this must use .bg-200% a long with
       },
       dropShadow: {
         "10px-solid": "12px 12px 0px 0px rgba(0,0,0,0.71)",

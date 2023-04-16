@@ -104,7 +104,12 @@ export default component$(() => {
         <Countdown1 q:slot="right" weddingDate={new Date("2023-03-28T00:00")} />
       </Firework2>
       <section class="my-20">
-        <QRCode mapUrl="https://goo.gl/maps/sZQAGgdUQcjYjnrj6" />
+        <QRCode
+          mapUrl="https://goo.gl/maps/sZQAGgdUQcjYjnrj6"
+          address1="ณ หอประชุมโรงเรียนเสนาบดี"
+          address2="ถ.ทักษิณเเสนา ต.เสนา อ.เสนา จ.พระนครศรีอยุธยา"
+          buttonColor=""
+        />
       </section>
       <Half>
         <Text2
